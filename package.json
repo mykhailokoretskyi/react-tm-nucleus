@@ -1,0 +1,17 @@
+{
+  "name": "react-tm-nucleus",
+  "version": "0.0.0",
+  "description": "React statefull components for TM-Nucleus",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "tm-nucleus",
+    "components",
+    "statfull"
+  ],
+  "author": "Mykhailo Koretskyi",
+  "license": "MIT"
+}
