@@ -1,0 +1,15 @@
+exports[`Input mocks match snapshots 1`] = `
+<input
+  checked={false}
+  disabled={false}
+  onBlur={[Function bound _onBlur]}
+  onChange={[Function bound _onChange]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}
+  placeholder="enter here..."
+  required={false}
+  type="text"
+  value="" />
+`;
