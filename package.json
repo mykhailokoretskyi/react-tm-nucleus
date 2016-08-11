@@ -13,5 +13,8 @@
     "statfull"
   ],
   "author": "Mykhailo Koretskyi",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "tm-nucleus": "^0.29.2"
+  }
 }
