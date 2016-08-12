@@ -57,14 +57,15 @@ export default class Input extends BaseInput {
     );
 
     componentDidUpdate(prevProps, prevState){
-        this.props.changeCallback();
+        if (this.state.value != prevState.value)
+            this.props.changeCallback();
     }
 
     shouldComponentUpdate(nextProps, nextState){
-        return  this.state.value !== nextState.value ||
-                this.state.checked !== nextState.checked ||
-                this.state.disabled !== nextState.disabled ||
-                this.state.required !== nextState.required;
+        return  this.state.value != nextState.value ||
+                this.state.checked != nextState.checked ||
+                this.state.disabled != nextState.disabled ||
+                this.state.required != nextState.required;
     }
 
     value(v){
@@ -124,7 +125,7 @@ export default class Input extends BaseInput {
     }
 
     _onChange(e){
-        const target = e.currentTarget ? e.currentTarget : e.target;
+        const target = e.target;
         this.setState({
             value: target.value,
             checked: target.checked
