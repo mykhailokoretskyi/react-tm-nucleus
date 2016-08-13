@@ -4,6 +4,8 @@ import ButtonCTA from '../buttonCTA';
 import ButtonStatic from '../buttonStatic';
 import ButtonFull from '../buttonFull';
 import ButtonAux from '../buttonAux';
+import ButtonAuxSecondary from '../buttonAuxSecondary';
+import ButtonAuxFull from '../buttonAuxFull';
 import TestUtils from 'react-addons-test-utils';
 
 describe('Button "a"', () => {
@@ -308,6 +310,64 @@ describe('ButtonAux', () => {
                 blurCallback={blur}
                 mouseEnterCallback={enter}
                 mouseLeaveCallback={leave}>Title</ButtonAux>
+        );
+    });
+
+    it("has accessor for `disabled`", () => {
+        expect(input.disabled()).toBe(false);
+        input.disabled(true);
+        expect(input.disabled()).toBe(true);
+        expect(() => {input.disabled("aaa")}).toThrow();
+    });
+});
+
+describe('ButtonAuxSecondary', () => {
+
+    var input, enter, leave, focus, blur, click;
+
+    beforeEach(function(){
+        enter = jest.genMockFn();
+        leave = jest.genMockFn();
+        focus = jest.genMockFn();
+        blur = jest.genMockFn();
+        click = jest.genMockFn();
+
+        input = TestUtils.renderIntoDocument(
+            <ButtonAuxSecondary
+                clickCallback={click}
+                focusCallback={focus}
+                blurCallback={blur}
+                mouseEnterCallback={enter}
+                mouseLeaveCallback={leave}>Title</ButtonAuxSecondary>
+        );
+    });
+
+    it("has accessor for `disabled`", () => {
+        expect(input.disabled()).toBe(false);
+        input.disabled(true);
+        expect(input.disabled()).toBe(true);
+        expect(() => {input.disabled("aaa")}).toThrow();
+    });
+});
+
+describe('ButtonAuxFull', () => {
+
+    var input, enter, leave, focus, blur, click;
+
+    beforeEach(function(){
+        enter = jest.genMockFn();
+        leave = jest.genMockFn();
+        focus = jest.genMockFn();
+        blur = jest.genMockFn();
+        click = jest.genMockFn();
+
+        input = TestUtils.renderIntoDocument(
+            <ButtonAuxFull
+                clickCallback={click}
+                focusCallback={focus}
+                blurCallback={blur}
+                mouseEnterCallback={enter}
+                mouseLeaveCallback={leave}>Title</ButtonAuxFull>
         );
     });
 

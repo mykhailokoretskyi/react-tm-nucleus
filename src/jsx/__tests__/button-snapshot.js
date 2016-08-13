@@ -4,6 +4,8 @@ import ButtonCTA from '../buttonCTA';
 import ButtonStatic from '../buttonStatic';
 import ButtonFull from '../buttonFull';
 import ButtonAux from '../buttonAux';
+import ButtonAuxSecondary from '../buttonAuxSecondary';
+import ButtonAuxFull from '../buttonAuxFull';
 import renderer from 'react-test-renderer';
 
 describe('Button', () => {
@@ -160,6 +162,70 @@ describe('ButtonAux', () => {
             <ButtonAux disabled={true}>
                 Test button
             </ButtonAux>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});
+
+describe('ButtonAuxSecondary', () => {
+    it(' "a" matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonAuxSecondary>
+                Test button
+            </ButtonAuxSecondary>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' "button" matches snapshot', () => {
+        const component = renderer.create(
+            <ButtonAuxSecondary button={true}>
+                Test button
+            </ButtonAuxSecondary>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' disabled matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonAuxSecondary disabled={true}>
+                Test button
+            </ButtonAuxSecondary>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});
+
+describe('ButtonAuxFull', () => {
+    it(' "a" matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonAuxFull>
+                Test button
+            </ButtonAuxFull>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' "button" matches snapshot', () => {
+        const component = renderer.create(
+            <ButtonAuxFull button={true}>
+                Test button
+            </ButtonAuxFull>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' disabled matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonAuxFull disabled={true}>
+                Test button
+            </ButtonAuxFull>
         );
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();
