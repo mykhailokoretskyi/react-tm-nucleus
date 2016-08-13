@@ -16,3 +16,4 @@ export ButtonAux from './jsx/buttonAux';
 export ButtonAuxSecondary from './jsx/buttonAuxSecondary';
 export ButtonAuxFull from './jsx/buttonAuxFull';
 export ButtonAuxMinor from './jsx/buttonAuxMinor';
+export ButtonOutlined from './jsx/buttonOutlined';

@@ -271,6 +271,45 @@ exports[`ButtonFull  disabled matches snapshots 1`] = `
 </a>
 `;
 
+exports[`ButtonOutlined  "a" matches snapshots 1`] = `
+<a
+  className="button-outlined"
+  href="#"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</a>
+`;
+
+exports[`ButtonOutlined  "button" matches snapshot 1`] = `
+<button
+  className="button-outlined"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</button>
+`;
+
+exports[`ButtonOutlined  disabled matches snapshots 1`] = `
+<a
+  className="button-outlined"
+  disabled={true}
+  href="#"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</a>
+`;
+
 exports[`ButtonStatic  "a" matches snapshots 1`] = `
 <a
   className="button button--static"

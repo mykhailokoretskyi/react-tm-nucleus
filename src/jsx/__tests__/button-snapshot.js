@@ -7,6 +7,7 @@ import ButtonAux from '../buttonAux';
 import ButtonAuxSecondary from '../buttonAuxSecondary';
 import ButtonAuxFull from '../buttonAuxFull';
 import ButtonAuxMinor from '../buttonAuxMinor';
+import ButtonOutlined from '../buttonOutlined';
 import renderer from 'react-test-renderer';
 
 describe('Button', () => {
@@ -259,6 +260,38 @@ describe('ButtonAuxMinor', () => {
             <ButtonAuxMinor disabled={true}>
                 Test button
             </ButtonAuxMinor>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});
+
+describe('ButtonOutlined', () => {
+    it(' "a" matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonOutlined>
+                Test button
+            </ButtonOutlined>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' "button" matches snapshot', () => {
+        const component = renderer.create(
+            <ButtonOutlined button={true}>
+                Test button
+            </ButtonOutlined>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' disabled matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonOutlined disabled={true}>
+                Test button
+            </ButtonOutlined>
         );
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();
