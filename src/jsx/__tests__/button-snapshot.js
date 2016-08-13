@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../button';
 import ButtonCTA from '../buttonCTA';
 import ButtonStatic from '../buttonStatic';
+import ButtonFull from '../buttonFull';
 import renderer from 'react-test-renderer';
 
 describe('Button', () => {
@@ -94,6 +95,38 @@ describe('ButtonStatic', () => {
             <ButtonStatic disabled={true}>
                 Test button
             </ButtonStatic>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});
+
+describe('ButtonFull', () => {
+    it(' "a" matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonFull>
+                Test button
+            </ButtonFull>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' "button" matches snapshot', () => {
+        const component = renderer.create(
+            <ButtonFull button={true}>
+                Test button
+            </ButtonFull>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' disabled matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonFull disabled={true}>
+                Test button
+            </ButtonFull>
         );
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();
