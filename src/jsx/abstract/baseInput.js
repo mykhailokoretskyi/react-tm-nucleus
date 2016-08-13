@@ -1,24 +1,13 @@
 'use strict';
 
 import React from 'react';
+import CallbackBase from './callbackBase';
 import _ from 'lodash';
 
-export default class BaseInput extends React.Component {
+export default class BaseInput extends CallbackBase {
     constructor(props){
         super(props);
     }
-
-    filterStaticProps(props){
-        const nonStaticProps = {};
-        for (const key of Object.keys(props)){
-            if (_.findIndex(this.staticProps, (value) => {return value == key;}) == -1){
-                nonStaticProps[key] = props[key];
-            }
-        }
-        return nonStaticProps;
-    }
-
-    staticProps = [];
 
     static INPUT_TYPES = [
         "text",
@@ -38,4 +27,16 @@ export default class BaseInput extends React.Component {
         "disabled",
         "required"
     ];
+
+    filterProps(props){
+        const {
+            type,
+            value,
+            checked,
+            disabled,
+            required,
+            ...other
+        } = props;
+        return super.filterProps(other);
+    }
 }

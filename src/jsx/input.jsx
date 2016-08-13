@@ -10,12 +10,7 @@ export default class Input extends BaseInput {
 
         this.state = _.pick(props, BaseInput.STATE_PROPERTIES);
 
-        this._onBlur = this._onBlur.bind(this);
         this._onChange = this._onChange.bind(this);
-        this._onClick = this._onClick.bind(this);
-        this._onFocus = this._onFocus.bind(this);
-        this._onMouseEnter = this._onMouseEnter.bind(this);
-        this._onMouseLeave = this._onMouseLeave.bind(this);
     }
 
     static propTypes = {
@@ -25,12 +20,7 @@ export default class Input extends BaseInput {
         checked:                        React.PropTypes.bool,
         disabled:                       React.PropTypes.bool,
         required:                       React.PropTypes.bool,
-        changeCallback:                 React.PropTypes.func,
-        clickCallback:                  React.PropTypes.func,
-        focusCallback:                  React.PropTypes.func,
-        blurCallback:                   React.PropTypes.func,
-        mouseEnterCallback:             React.PropTypes.func,
-        mouseLeaveCallback:             React.PropTypes.func
+        changeCallback:                 React.PropTypes.func
     };
 
     static defaultProps = {
@@ -40,22 +30,12 @@ export default class Input extends BaseInput {
         checked:                        false,
         disabled:                       false,
         required:                       false,
-        changeCallback:                 function(){},
-        clickCallback:                  function(){},
-        focusCallback:                  function(){},
-        blurCallback:                   function(){},
-        mouseEnterCallback:             function(){},
-        mouseLeaveCallback:             function(){}
+        changeCallback:                 function(){}
     };
 
     staticProps = _.concat(
         BaseInput.STATE_PROPERTIES,
-        "changeCallback",
-        "clickCallback",
-        "focusCallback",
-        "blurCallback",
-        "mouseEnterCallback",
-        "mouseLeaveCallback"
+        "changeCallback"
     );
 
     componentDidUpdate(prevProps, prevState){
@@ -134,29 +114,17 @@ export default class Input extends BaseInput {
         });
     }
 
-    _onFocus(e){
-        this.props.focusCallback();
-    }
-
-    _onBlur(e){
-        this.props.blurCallback();
-    }
-
-    _onMouseEnter(e){
-        this.props.mouseEnterCallback();
-    }
-
-    _onMouseLeave(e){
-        this.props.mouseLeaveCallback();
-    }
-
-    _onClick(e){
-        this.props.clickCallback();
+    filterProps(props){
+        const {
+            changeCallback,
+            ...other
+        } = props;
+        return super.filterProps(other);
     }
 
     render(){
         const classes = "input-group__text-field " + (this.state.value ? 'has-content' : '');
-        const props = this.filterStaticProps(this.props);
+        const props = this.filterProps(this.props);
         return(
             <input {...props}
                    className={classes}
@@ -165,11 +133,6 @@ export default class Input extends BaseInput {
                    checked={this.state.checked}
                    disabled={this.state.disabled}
                    required={this.state.required}
-                   onClick={this._onClick}
-                   onBlur={this._onBlur}
-                   onFocus={this._onFocus}
-                   onMouseEnter={this._onMouseEnter}
-                   onMouseLeave={this._onMouseLeave}
                    onChange={this._onChange} />
         );
     }
