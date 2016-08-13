@@ -1,7 +1,9 @@
 exports[`Input mocks match snapshots 1`] = `
 <input
   checked={false}
+  className="input-group__text-field "
   disabled={false}
+  id=""
   onBlur={[Function bound _onBlur]}
   onChange={[Function bound _onChange]}
   onClick={[Function bound _onClick]}
@@ -12,4 +14,22 @@ exports[`Input mocks match snapshots 1`] = `
   required={false}
   type="text"
   value="" />
+`;
+
+exports[`Input with value matches snapshot 1`] = `
+<input
+  checked={false}
+  className="input-group__text-field has-content"
+  disabled={false}
+  id=""
+  onBlur={[Function bound _onBlur]}
+  onChange={[Function bound _onChange]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}
+  placeholder="enter here..."
+  required={false}
+  type="text"
+  value="2sdf" />
 `;

@@ -19,6 +19,7 @@ export default class Input extends BaseInput {
     }
 
     static propTypes = {
+        id:                             React.PropTypes.string,
         type:                           React.PropTypes.oneOf(BaseInput.INPUT_TYPES),
         value:                          React.PropTypes.string,
         checked:                        React.PropTypes.bool,
@@ -33,6 +34,7 @@ export default class Input extends BaseInput {
     };
 
     static defaultProps = {
+        id:                             "",
         type:                           BaseInput.DEFAULT_TYPE,
         value:                          "",
         checked:                        false,
@@ -153,9 +155,11 @@ export default class Input extends BaseInput {
     }
 
     render(){
+        const classes = "input-group__text-field " + (this.state.value ? 'has-content' : '');
         const props = this.filterStaticProps(this.props);
         return(
             <input {...props}
+                   className={classes}
                    type={this.state.type}
                    value={this.state.value}
                    checked={this.state.checked}

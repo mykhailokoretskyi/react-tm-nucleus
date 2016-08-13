@@ -1,0 +1,56 @@
+exports[`TextInput mocks match snapshots 1`] = `
+<div
+  className="input-group">
+  <input
+    checked={false}
+    className="input-group__text-field "
+    disabled={false}
+    id=""
+    onBlur={[Function bound _onBlur]}
+    onChange={[Function bound _onChange]}
+    onClick={[Function bound _onClick]}
+    onFocus={[Function bound _onFocus]}
+    onMouseEnter={[Function bound _onMouseEnter]}
+    onMouseLeave={[Function bound _onMouseLeave]}
+    placeholder="enter rhee..."
+    required={false}
+    type="text"
+    value="" />
+  <label
+    className="input-group__label"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": " "
+      }
+    }
+    htmlFor="" />
+</div>
+`;
+
+exports[`TextInput with value matches snapshot 1`] = `
+<div
+  className="input-group">
+  <input
+    checked={false}
+    className="input-group__text-field has-content"
+    disabled={false}
+    id=""
+    onBlur={[Function bound _onBlur]}
+    onChange={[Function bound _onChange]}
+    onClick={[Function bound _onClick]}
+    onFocus={[Function bound _onFocus]}
+    onMouseEnter={[Function bound _onMouseEnter]}
+    onMouseLeave={[Function bound _onMouseLeave]}
+    required={true}
+    type="text"
+    value="2sdf" />
+  <label
+    className="input-group__label"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": " <span class=\"input-group__required\">*</span>"
+      }
+    }
+    htmlFor="" />
+</div>
+`;
