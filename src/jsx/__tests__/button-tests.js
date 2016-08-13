@@ -1,13 +1,16 @@
 import React from 'react';
-import Button from '../button';
-import ButtonCTA from '../buttonCTA';
-import ButtonStatic from '../buttonStatic';
-import ButtonFull from '../buttonFull';
-import ButtonAux from '../buttonAux';
-import ButtonAuxSecondary from '../buttonAuxSecondary';
-import ButtonAuxFull from '../buttonAuxFull';
-import ButtonAuxMinor from '../buttonAuxMinor';
-import ButtonOutlined from '../buttonOutlined';
+import Button from '../buttons/button';
+import ButtonCTA from '../buttons/buttonCTA';
+import ButtonStatic from '../buttons/buttonStatic';
+import ButtonFull from '../buttons/buttonFull';
+import ButtonAux from '../buttons/buttonAux';
+import ButtonAuxSecondary from '../buttons/buttonAuxSecondary';
+import ButtonAuxFull from '../buttons/buttonAuxFull';
+import ButtonAuxMinor from '../buttons/buttonAuxMinor';
+import ButtonOutlined from '../buttons/buttonOutlined';
+import ButtonOutlinedStatic from '../buttons/buttonOutlinedStatic';
+import ButtonOutlinedFull from '../buttons/buttonOutlinedFull';
+import Unbutton from '../buttons/unbutton';
 import TestUtils from 'react-addons-test-utils';
 
 describe('Button "a"', () => {
@@ -428,6 +431,93 @@ describe('ButtonOutlined', () => {
                 blurCallback={blur}
                 mouseEnterCallback={enter}
                 mouseLeaveCallback={leave}>Title</ButtonOutlined>
+        );
+    });
+
+    it("has accessor for `disabled`", () => {
+        expect(input.disabled()).toBe(false);
+        input.disabled(true);
+        expect(input.disabled()).toBe(true);
+        expect(() => {input.disabled("aaa")}).toThrow();
+    });
+});
+
+describe('ButtonOutlinedStatic', () => {
+
+    var input, enter, leave, focus, blur, click;
+
+    beforeEach(function(){
+        enter = jest.genMockFn();
+        leave = jest.genMockFn();
+        focus = jest.genMockFn();
+        blur = jest.genMockFn();
+        click = jest.genMockFn();
+
+        input = TestUtils.renderIntoDocument(
+            <ButtonOutlinedStatic
+                clickCallback={click}
+                focusCallback={focus}
+                blurCallback={blur}
+                mouseEnterCallback={enter}
+                mouseLeaveCallback={leave}>Title</ButtonOutlinedStatic>
+        );
+    });
+
+    it("has accessor for `disabled`", () => {
+        expect(input.disabled()).toBe(false);
+        input.disabled(true);
+        expect(input.disabled()).toBe(true);
+        expect(() => {input.disabled("aaa")}).toThrow();
+    });
+});
+
+describe('ButtonOutlinedFull', () => {
+
+    var input, enter, leave, focus, blur, click;
+
+    beforeEach(function(){
+        enter = jest.genMockFn();
+        leave = jest.genMockFn();
+        focus = jest.genMockFn();
+        blur = jest.genMockFn();
+        click = jest.genMockFn();
+
+        input = TestUtils.renderIntoDocument(
+            <ButtonOutlinedFull
+                clickCallback={click}
+                focusCallback={focus}
+                blurCallback={blur}
+                mouseEnterCallback={enter}
+                mouseLeaveCallback={leave}>Title</ButtonOutlinedFull>
+        );
+    });
+
+    it("has accessor for `disabled`", () => {
+        expect(input.disabled()).toBe(false);
+        input.disabled(true);
+        expect(input.disabled()).toBe(true);
+        expect(() => {input.disabled("aaa")}).toThrow();
+    });
+});
+
+describe('Unbutton', () => {
+
+    var input, enter, leave, focus, blur, click;
+
+    beforeEach(function(){
+        enter = jest.genMockFn();
+        leave = jest.genMockFn();
+        focus = jest.genMockFn();
+        blur = jest.genMockFn();
+        click = jest.genMockFn();
+
+        input = TestUtils.renderIntoDocument(
+            <Unbutton
+                clickCallback={click}
+                focusCallback={focus}
+                blurCallback={blur}
+                mouseEnterCallback={enter}
+                mouseLeaveCallback={leave}>Title</Unbutton>
         );
     });
 

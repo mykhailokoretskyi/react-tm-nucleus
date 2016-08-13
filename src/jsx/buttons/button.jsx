@@ -2,7 +2,7 @@
 
 import React from 'react';
 import _ from 'lodash';
-import CallbackBase from './abstract/callbackBase';
+import CallbackBase from '../abstract/callbackBase';
 
 export default class Button extends CallbackBase {
     constructor(props){
@@ -22,7 +22,10 @@ export default class Button extends CallbackBase {
         buttonAuxSecondary:     "button-aux button-aux--secondary",
         buttonAuxFull:          "button-aux button-aux--full",
         buttonAuxMinor:         "button-aux button-aux--minor",
-        buttonOutlined:         "button-outlined"
+        buttonOutlined:         "button-outlined",
+        buttonOutlinedStatic:   "button-outlined button-outlined--static",
+        buttonOutlinedFull:     "button-outlined button-outlined--full",
+        unbutton:               "unbutton"
     };
 
     static propTypes = {

@@ -1,17 +1,17 @@
 'use strict';
 
 import React from 'react';
-import ButtonWrapper from './abstract/buttonWrapper';
+import ButtonWrapper from '../abstract/buttonWrapper';
 import Button from './button';
 
-export default class ButtonFull extends ButtonWrapper {
+export default class ButtonAux extends ButtonWrapper {
     constructor(props){
         super(props);
     }
 
     render(){
         return (
-            <Button {...this.props} type="buttonFull" ref="button">
+            <Button {...this.props} type="buttonAux" ref="button">
                 { this.props.children }
             </Button>
         );

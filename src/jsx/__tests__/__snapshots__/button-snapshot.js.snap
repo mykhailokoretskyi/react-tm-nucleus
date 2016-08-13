@@ -310,6 +310,84 @@ exports[`ButtonOutlined  disabled matches snapshots 1`] = `
 </a>
 `;
 
+exports[`ButtonOutlinedFull  "a" matches snapshots 1`] = `
+<a
+  className="button-outlined button-outlined--full"
+  href="#"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</a>
+`;
+
+exports[`ButtonOutlinedFull  "button" matches snapshot 1`] = `
+<button
+  className="button-outlined button-outlined--full"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</button>
+`;
+
+exports[`ButtonOutlinedFull  disabled matches snapshots 1`] = `
+<a
+  className="button-outlined button-outlined--full"
+  disabled={true}
+  href="#"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</a>
+`;
+
+exports[`ButtonOutlinedStatic  "a" matches snapshots 1`] = `
+<a
+  className="button-outlined button-outlined--static"
+  href="#"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</a>
+`;
+
+exports[`ButtonOutlinedStatic  "button" matches snapshot 1`] = `
+<button
+  className="button-outlined button-outlined--static"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</button>
+`;
+
+exports[`ButtonOutlinedStatic  disabled matches snapshots 1`] = `
+<a
+  className="button-outlined button-outlined--static"
+  disabled={true}
+  href="#"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</a>
+`;
+
 exports[`ButtonStatic  "a" matches snapshots 1`] = `
 <a
   className="button button--static"
@@ -338,6 +416,45 @@ exports[`ButtonStatic  "button" matches snapshot 1`] = `
 exports[`ButtonStatic  disabled matches snapshots 1`] = `
 <a
   className="button button--static"
+  disabled={true}
+  href="#"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</a>
+`;
+
+exports[`Unbutton  "a" matches snapshots 1`] = `
+<a
+  className="unbutton"
+  href="#"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</a>
+`;
+
+exports[`Unbutton  "button" matches snapshot 1`] = `
+<button
+  className="unbutton"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</button>
+`;
+
+exports[`Unbutton  disabled matches snapshots 1`] = `
+<a
+  className="unbutton"
   disabled={true}
   href="#"
   onBlur={[Function bound _onBlur]}

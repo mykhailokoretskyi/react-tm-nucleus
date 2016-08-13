@@ -1,13 +1,16 @@
 import React from 'react';
-import Button from '../button';
-import ButtonCTA from '../buttonCTA';
-import ButtonStatic from '../buttonStatic';
-import ButtonFull from '../buttonFull';
-import ButtonAux from '../buttonAux';
-import ButtonAuxSecondary from '../buttonAuxSecondary';
-import ButtonAuxFull from '../buttonAuxFull';
-import ButtonAuxMinor from '../buttonAuxMinor';
-import ButtonOutlined from '../buttonOutlined';
+import Button from '../buttons/button';
+import ButtonCTA from '../buttons/buttonCTA';
+import ButtonStatic from '../buttons/buttonStatic';
+import ButtonFull from '../buttons/buttonFull';
+import ButtonAux from '../buttons/buttonAux';
+import ButtonAuxSecondary from '../buttons/buttonAuxSecondary';
+import ButtonAuxFull from '../buttons/buttonAuxFull';
+import ButtonAuxMinor from '../buttons/buttonAuxMinor';
+import ButtonOutlined from '../buttons/buttonOutlined';
+import ButtonOutlinedStatic from '../buttons/buttonOutlinedStatic';
+import ButtonOutlinedFull from '../buttons/buttonOutlinedFull';
+import Unbutton from '../buttons/unbutton';
 import renderer from 'react-test-renderer';
 
 describe('Button', () => {
@@ -292,6 +295,102 @@ describe('ButtonOutlined', () => {
             <ButtonOutlined disabled={true}>
                 Test button
             </ButtonOutlined>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});
+
+describe('ButtonOutlinedStatic', () => {
+    it(' "a" matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonOutlinedStatic>
+                Test button
+            </ButtonOutlinedStatic>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' "button" matches snapshot', () => {
+        const component = renderer.create(
+            <ButtonOutlinedStatic button={true}>
+                Test button
+            </ButtonOutlinedStatic>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' disabled matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonOutlinedStatic disabled={true}>
+                Test button
+            </ButtonOutlinedStatic>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});
+
+describe('ButtonOutlinedFull', () => {
+    it(' "a" matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonOutlinedFull>
+                Test button
+            </ButtonOutlinedFull>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' "button" matches snapshot', () => {
+        const component = renderer.create(
+            <ButtonOutlinedFull button={true}>
+                Test button
+            </ButtonOutlinedFull>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' disabled matches snapshots', () => {
+        const component = renderer.create(
+            <ButtonOutlinedFull disabled={true}>
+                Test button
+            </ButtonOutlinedFull>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});
+
+describe('Unbutton', () => {
+    it(' "a" matches snapshots', () => {
+        const component = renderer.create(
+            <Unbutton>
+                Test button
+            </Unbutton>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' "button" matches snapshot', () => {
+        const component = renderer.create(
+            <Unbutton button={true}>
+                Test button
+            </Unbutton>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it(' disabled matches snapshots', () => {
+        const component = renderer.create(
+            <Unbutton disabled={true}>
+                Test button
+            </Unbutton>
         );
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();
