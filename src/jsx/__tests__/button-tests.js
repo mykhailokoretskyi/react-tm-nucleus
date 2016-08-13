@@ -3,6 +3,7 @@ import Button from '../button';
 import ButtonCTA from '../buttonCTA';
 import ButtonStatic from '../buttonStatic';
 import ButtonFull from '../buttonFull';
+import ButtonAux from '../buttonAux';
 import TestUtils from 'react-addons-test-utils';
 
 describe('Button "a"', () => {
@@ -278,6 +279,35 @@ describe('ButtonFull', () => {
                 blurCallback={blur}
                 mouseEnterCallback={enter}
                 mouseLeaveCallback={leave}>Title</ButtonFull>
+        );
+    });
+
+    it("has accessor for `disabled`", () => {
+        expect(input.disabled()).toBe(false);
+        input.disabled(true);
+        expect(input.disabled()).toBe(true);
+        expect(() => {input.disabled("aaa")}).toThrow();
+    });
+});
+
+describe('ButtonAux', () => {
+
+    var input, enter, leave, focus, blur, click;
+
+    beforeEach(function(){
+        enter = jest.genMockFn();
+        leave = jest.genMockFn();
+        focus = jest.genMockFn();
+        blur = jest.genMockFn();
+        click = jest.genMockFn();
+
+        input = TestUtils.renderIntoDocument(
+            <ButtonAux
+                clickCallback={click}
+                focusCallback={focus}
+                blurCallback={blur}
+                mouseEnterCallback={enter}
+                mouseLeaveCallback={leave}>Title</ButtonAux>
         );
     });
 

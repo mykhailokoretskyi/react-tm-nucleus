@@ -12,3 +12,4 @@ export Button from './jsx/button';
 export ButtonCTA from './jsx/buttonCTA';
 export ButtonFull from './jsx/buttonFull';
 export ButtonStatic from './jsx/buttonStatic';
+export ButtonAux from './jsx/buttonAux';
