@@ -75,3 +75,42 @@ exports[`ButtonCTA  disabled matches snapshots 1`] = `
   Test button
 </a>
 `;
+
+exports[`ButtonStatic  "a" matches snapshots 1`] = `
+<a
+  className="button button--static"
+  href="#"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</a>
+`;
+
+exports[`ButtonStatic  "button" matches snapshot 1`] = `
+<button
+  className="button button--static"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</button>
+`;
+
+exports[`ButtonStatic  disabled matches snapshots 1`] = `
+<a
+  className="button button--static"
+  disabled={true}
+  href="#"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  Test button
+</a>
+`;

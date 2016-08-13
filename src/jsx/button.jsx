@@ -15,7 +15,8 @@ export default class Button extends CallbackBase {
 
     static buttonTypes = {
         button:                 "button",
-        buttonCTA:              "button button--cta"
+        buttonCTA:              "button button--cta",
+        buttonStatic:           "button button--static"
     };
 
     static propTypes = {
