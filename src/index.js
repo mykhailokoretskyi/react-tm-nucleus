@@ -15,3 +15,4 @@ export ButtonStatic from './jsx/buttonStatic';
 export ButtonAux from './jsx/buttonAux';
 export ButtonAuxSecondary from './jsx/buttonAuxSecondary';
 export ButtonAuxFull from './jsx/buttonAuxFull';
+export ButtonAuxMinor from './jsx/buttonAuxMinor';

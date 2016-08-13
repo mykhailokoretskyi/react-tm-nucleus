@@ -20,7 +20,8 @@ export default class Button extends CallbackBase {
         buttonFull:             "button button--full",
         buttonAux:              "button-aux",
         buttonAuxSecondary:     "button-aux button-aux--secondary",
-        buttonAuxFull:          "button-aux button-aux--full"
+        buttonAuxFull:          "button-aux button-aux--full",
+        buttonAuxMinor:         "button-aux button-aux--minor"
     };
 
     static propTypes = {
