@@ -1,0 +1,120 @@
+exports[`Dropdown multiple matches snapshot 1`] = `
+<div
+  className="input-group dropdown">
+  <select
+    className="dropdown__select"
+    id=""
+    multiple={true}
+    onChange={[Function bound _onChange]}
+    required={true}
+    value={
+      Array [
+        "b"
+      ]
+    }>
+    <option
+      value="" />
+    <option
+      value="a">
+      A
+    </option>
+    <option
+      value="b">
+      B
+    </option>
+  </select>
+  <label
+    className="input-group__label"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "Choose&nbsp;<span class=\"input-group__required\">*</span>"
+      }
+    }
+    htmlFor="" />
+  <svg
+    className="dropdown__icon-chevron"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<use xlink:href=\"img/someIcon\" />"
+      }
+    } />
+</div>
+`;
+
+exports[`Dropdown with label matches snapshot 1`] = `
+<div
+  className="input-group dropdown">
+  <select
+    className="dropdown__select"
+    id=""
+    multiple={false}
+    onChange={[Function bound _onChange]}
+    required={false}
+    value="">
+    <option
+      value="" />
+    <option
+      value="a">
+      A
+    </option>
+    <option
+      value="b">
+      B
+    </option>
+  </select>
+  <label
+    className="input-group__label"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "Choose"
+      }
+    }
+    htmlFor="" />
+  <svg
+    className="dropdown__icon-chevron"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<use xlink:href=\"img/someIcon\" />"
+      }
+    } />
+</div>
+`;
+
+exports[`Dropdown with value matches snapshot 1`] = `
+<div
+  className="input-group dropdown">
+  <select
+    className="dropdown__select"
+    id=""
+    multiple={false}
+    onChange={[Function bound _onChange]}
+    required={false}
+    value="a">
+    <option
+      value="" />
+    <option
+      value="a">
+      A
+    </option>
+    <option
+      value="b">
+      B
+    </option>
+  </select>
+  <label
+    className="input-group__label"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ""
+      }
+    }
+    htmlFor="" />
+  <svg
+    className="dropdown__icon-chevron"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ""
+      }
+    } />
+</div>
+`;
