@@ -1,11 +1,11 @@
 import React from 'react';
-import EmailInput from '../emailInput';
+import PasswordInput from '../passwordInput';
 import renderer from 'react-test-renderer';
 
-describe('EmailInput', () => {
+describe('PasswordInput', () => {
     it('mocks match snapshots', () => {
         const component = renderer.create(
-            <EmailInput value="" placeholder="enter rhee..." />
+            <PasswordInput value="" placeholder="enter rhee..." />
         );
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();
@@ -13,7 +13,7 @@ describe('EmailInput', () => {
 
     it('with value matches snapshot', () => {
         const component = renderer.create(
-            <EmailInput value="2sdf" required={true} />
+            <PasswordInput value="2sdf" required={true} />
         );
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();

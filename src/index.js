@@ -3,3 +3,4 @@
 export Input from './jsx/input';
 export TextInput from './jsx/textInput';
 export EmailInput from './jsx/emailInput';
+export PasswordInput from './jsx/passwordInput';
