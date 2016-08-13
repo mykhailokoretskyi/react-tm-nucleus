@@ -7,3 +7,5 @@ export PasswordInput from './jsx/passwordInput';
 
 export Select from './jsx/select';
 export Dropdown from './jsx/dropdown';
+
+export Button from './jsx/button';
