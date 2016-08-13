@@ -1,8 +1,9 @@
 'use strict';
 
 import React from 'react';
+import CallbackBase from './abstract/callbackBase';
 
-export default class Select extends React.Component {
+export default class Select extends CallbackBase {
     constructor(props){
         super(props);
 
@@ -12,12 +13,7 @@ export default class Select extends React.Component {
             required:   props.required
         };
 
-        this._onBlur = this._onBlur.bind(this);
         this._onChange = this._onChange.bind(this);
-        this._onClick = this._onClick.bind(this);
-        this._onFocus = this._onFocus.bind(this);
-        this._onMouseEnter = this._onMouseEnter.bind(this);
-        this._onMouseLeave = this._onMouseLeave.bind(this);
     }
 
     static propTypes = {
@@ -29,24 +25,14 @@ export default class Select extends React.Component {
                                 React.PropTypes.string
                             ]),
         required:           React.PropTypes.bool,
-        changeCallback:     React.PropTypes.func,
-        clickCallback:                  React.PropTypes.func,
-        focusCallback:                  React.PropTypes.func,
-        blurCallback:                   React.PropTypes.func,
-        mouseEnterCallback:             React.PropTypes.func,
-        mouseLeaveCallback:             React.PropTypes.func
+        changeCallback:     React.PropTypes.func
     };
 
     static defaultProps = {
         multiple:               false,
         defaultValue:           '',
         required:               false,
-        changeCallback:         function(){},
-        clickCallback:          function(){},
-        focusCallback:          function(){},
-        blurCallback:           function(){},
-        mouseEnterCallback:     function(){},
-        mouseLeaveCallback:     function(){}
+        changeCallback:         function(){}
     };
 
     componentDidUpdate(prevProps, prevState){
@@ -57,26 +43,6 @@ export default class Select extends React.Component {
         this.setState({
             value: e.target.value
         });
-    }
-
-    _onFocus(e){
-        this.props.focusCallback();
-    }
-
-    _onBlur(e){
-        this.props.blurCallback();
-    }
-
-    _onMouseEnter(e){
-        this.props.mouseEnterCallback();
-    }
-
-    _onMouseLeave(e){
-        this.props.mouseLeaveCallback();
-    }
-
-    _onClick(e){
-        this.props.clickCallback();
     }
 
     value(v){
@@ -115,30 +81,26 @@ export default class Select extends React.Component {
         }
     }
 
-    render(){
+    filterProps(props) {
         const {
             multiple,
             defaultValue,
             changeCallback,
-            blurCallback,
-            focusCallback,
-            mouseLeaveCallback,
-            mouseEnterCallback,
-            clickCallback,
             ...other
-        } = this.props;
+        } = props;
+
+        return super.filterProps(other);
+    }
+
+    render(){
+        const props = this.filterProps(this.props);
 
         return (
             <select className="dropdown__select"
                     value={this.state.value}
                     multiple={this.state.multiple}
                     onChange={this._onChange}
-                    onBlur={this._onBlur}
-                    onFocus={this._onFocus}
-                    onMouseEnter={this._onMouseEnter}
-                    onMouseLeave={this._onMouseLeave}
-                    onClick={this._onClick}
-                    {...other} >
+                    {...props} >
                 { this.props.children }
             </select>
         );
