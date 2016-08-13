@@ -18,6 +18,11 @@ describe('Input', () => {
             <Dropdown label="Choose"
                       defaultValue=""
                       changeCallback={change}
+                      clickCallback={click}
+                      mouseEnterCallback={enter}
+                      mouseLeaveCallback={leave}
+                      focusCallback={focus}
+                      blurCallback={blur}
                       icon='<use xlink:href="img/someIcon" />'>
                 <option value="" />
                 <option value="a">A</option>
@@ -34,36 +39,31 @@ describe('Input', () => {
         );
     });
 
-    // it('doesnt trigger change callback', () => {
-    //     let element = TestUtils.findRenderedDOMComponentWithTag(input, 'input');
-    //     TestUtils.Simulate.change(element, {target:{value:"initial value"}});
-    //     expect(change).not.toBeCalled();
-    // });
-    // it('triggers mouse enter callback', () => {
-    //     let element = TestUtils.findRenderedDOMComponentWithTag(input, 'input');
-    //     TestUtils.Simulate.mouseEnter(element);
-    //     expect(enter).toBeCalled();
-    // });
-    // it('triggers mouse leave callback', () => {
-    //     let element = TestUtils.findRenderedDOMComponentWithTag(input, 'input');
-    //     TestUtils.Simulate.mouseLeave(element);
-    //     expect(leave).toBeCalled();
-    // });
-    // it('triggers focus callback', () => {
-    //     let element = TestUtils.findRenderedDOMComponentWithTag(input, 'input');
-    //     TestUtils.Simulate.focus(element);
-    //     expect(focus).toBeCalled();
-    // });
-    // it('triggers blur callback', () => {
-    //     let element = TestUtils.findRenderedDOMComponentWithTag(input, 'input');
-    //     TestUtils.Simulate.blur(element);
-    //     expect(blur).toBeCalled();
-    // });
-    // it('triggers click callback', () => {
-    //     let element = TestUtils.findRenderedDOMComponentWithTag(input, 'input');
-    //     TestUtils.Simulate.click(element);
-    //     expect(click).toBeCalled();
-    // });
+    it('triggers mouse enter callback', () => {
+        let element = TestUtils.findRenderedDOMComponentWithTag(input, 'select');
+        TestUtils.Simulate.mouseEnter(element);
+        expect(enter).toBeCalled();
+    });
+    it('triggers mouse leave callback', () => {
+        let element = TestUtils.findRenderedDOMComponentWithTag(input, 'select');
+        TestUtils.Simulate.mouseLeave(element);
+        expect(leave).toBeCalled();
+    });
+    it('triggers focus callback', () => {
+        let element = TestUtils.findRenderedDOMComponentWithTag(input, 'select');
+        TestUtils.Simulate.focus(element);
+        expect(focus).toBeCalled();
+    });
+    it('triggers blur callback', () => {
+        let element = TestUtils.findRenderedDOMComponentWithTag(input, 'select');
+        TestUtils.Simulate.blur(element);
+        expect(blur).toBeCalled();
+    });
+    it('triggers click callback', () => {
+        let element = TestUtils.findRenderedDOMComponentWithTag(input, 'select');
+        TestUtils.Simulate.click(element);
+        expect(click).toBeCalled();
+    });
     it('triggers change callback', () => {
         let element = TestUtils.findRenderedDOMComponentWithTag(input, 'select');
         TestUtils.Simulate.change(element, {target:{value:"a"}});
