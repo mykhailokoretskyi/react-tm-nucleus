@@ -8,7 +8,10 @@ export default class Input extends BaseInput {
     constructor(props){
         super(props);
 
-        this.state = _.pick(props, BaseInput.STATE_PROPERTIES);
+        const state = _.pick(props, BaseInput.STATE_PROPERTIES);
+        state.active = false;
+
+        this.state = state;
 
         this._onChange = this._onChange.bind(this);
     }
@@ -131,6 +134,20 @@ export default class Input extends BaseInput {
         });
     }
 
+    _onFocus(e){
+        this.setState({
+            active: true
+        });
+        super._onFocus(e);
+    }
+
+    _onBlur(e){
+        this.setState({
+            active: false
+        });
+        super._onBlur(e);
+    }
+
     filterProps(props){
         const {
             changeCallback,
@@ -141,7 +158,10 @@ export default class Input extends BaseInput {
     }
 
     render(){
-        const classes = "input-group__text-field " + (this.state.value ? 'has-content' : '') + (this.state.error ? " is-error-field" : '');
+        const classes = "input-group__text-field " +
+                        (this.state.value || this.state.active ? 'has-content' : '') +
+                        (this.state.error ? " is-error-field" : '');
+
         const props = this.filterProps(this.props);
         return(
             <input {...props}
