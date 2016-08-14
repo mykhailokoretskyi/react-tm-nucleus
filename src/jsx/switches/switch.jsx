@@ -13,6 +13,7 @@ export default class Switch extends CallbackBase {
     }
 
     componentDidUpdate(prevProps, prevState){
+        /* istanbul ignore else */
         if (prevState.value != this.state.value){
             this.props.changeCallback();
         }
