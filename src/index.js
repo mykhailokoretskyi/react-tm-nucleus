@@ -20,3 +20,6 @@ export ButtonOutlined from './jsx/buttons/buttonOutlined';
 export ButtonOutlinedStatic from './jsx/buttons/buttonOutlinedStatic';
 export ButtonOutlinedFull from './jsx/buttons/buttonOutlinedFull';
 export Unbutton from './jsx/buttons/unbutton';
+
+export Switch from './jsx/switches/switch';
+export ResaleSwitch from './jsx/switches/resaleSwitch';

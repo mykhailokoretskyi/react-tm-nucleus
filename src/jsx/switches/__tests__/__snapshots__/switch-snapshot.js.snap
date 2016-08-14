@@ -1,0 +1,55 @@
+exports[`ResaleSwitch  off matches snapshots 1`] = `
+<button
+  className="toggle-switch__button"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  <div
+    className="toggle-switch__indicator--resale toggle-switch__indicator--left">
+    [+]
+  </div>
+</button>
+`;
+
+exports[`ResaleSwitch  on matches snapshot 1`] = `
+<button
+  className="toggle-switch__button toggle-switch__button--active-resale"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  <div
+    className="toggle-switch__indicator--resale toggle-switch__indicator--right">
+    [+]
+  </div>
+</button>
+`;
+
+exports[`Switch  off matches snapshots 1`] = `
+<button
+  className="toggle-switch__button"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  <div
+    className="toggle-switch__indicator toggle-switch__indicator--left" />
+</button>
+`;
+
+exports[`Switch  on matches snapshot 1`] = `
+<button
+  className="toggle-switch__button toggle-switch__button--active"
+  onBlur={[Function bound _onBlur]}
+  onClick={[Function bound _onClick]}
+  onFocus={[Function bound _onFocus]}
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}>
+  <div
+    className="toggle-switch__indicator toggle-switch__indicator--right" />
+</button>
+`;
