@@ -7,6 +7,10 @@ export default class InputWrapper extends React.Component{
         super(props);
     }
 
+    error(v){
+        return this.refs.input.error(v);
+    }
+
     value(v){
         return this.refs.input.value(v);
     }

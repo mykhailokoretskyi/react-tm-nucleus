@@ -83,6 +83,13 @@ describe('TextInput', () => {
         expect(() => {input.required("aaa")}).toThrow();
     });
 
+    it("has accessor for `error`", () => {
+        expect(input.error()).toBe(false);
+        input.error(true);
+        expect(input.error()).toBe(true);
+        expect(() => {input.error("aaa")}).toThrow();
+    });
+
     it("has accessor for `disabled`", () => {
         expect(input.disabled()).toBe(false);
         input.disabled(true);

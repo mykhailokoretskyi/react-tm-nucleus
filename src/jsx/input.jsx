@@ -20,6 +20,7 @@ export default class Input extends BaseInput {
         checked:                        React.PropTypes.bool,
         disabled:                       React.PropTypes.bool,
         required:                       React.PropTypes.bool,
+        error:                          React.PropTypes.bool,
         changeCallback:                 React.PropTypes.func
     };
 
@@ -30,6 +31,7 @@ export default class Input extends BaseInput {
         checked:                        false,
         disabled:                       false,
         required:                       false,
+        error:                          false,
         changeCallback:                 function(){}
     };
 
@@ -47,7 +49,8 @@ export default class Input extends BaseInput {
         return  this.state.value != nextState.value ||
                 this.state.checked != nextState.checked ||
                 this.state.disabled != nextState.disabled ||
-                this.state.required != nextState.required;
+                this.state.required != nextState.required ||
+                this.state.error != nextState.error;
     }
 
     value(v){
@@ -71,6 +74,20 @@ export default class Input extends BaseInput {
             }
         } else {
             return this.state.checked;
+        }
+    }
+
+    error(v){
+        if (typeof v !== "undefined"){
+            if (typeof v !== "boolean"){
+                throw new Error("Invalid type of value: requires boolean!!!");
+            } else {
+                this.setState({
+                    error: v
+                });
+            }
+        } else {
+            return this.state.error;
         }
     }
 
@@ -117,13 +134,14 @@ export default class Input extends BaseInput {
     filterProps(props){
         const {
             changeCallback,
+            error,
             ...other
         } = props;
         return super.filterProps(other);
     }
 
     render(){
-        const classes = "input-group__text-field " + (this.state.value ? 'has-content' : '');
+        const classes = "input-group__text-field " + (this.state.value ? 'has-content' : '') + (this.state.error ? " is-error-field" : '');
         const props = this.filterProps(this.props);
         return(
             <input {...props}

@@ -25,7 +25,8 @@ export default class BaseInput extends CallbackBase {
         "value",
         "checked",
         "disabled",
-        "required"
+        "required",
+        "error"
     ];
 
     filterProps(props){

@@ -13,7 +13,7 @@ describe('EmailInput', () => {
 
     it('with value matches snapshot', () => {
         const component = renderer.create(
-            <EmailInput value="2sdf" required={true} />
+            <EmailInput value="2sdf" error={true} required={true} />
         );
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();

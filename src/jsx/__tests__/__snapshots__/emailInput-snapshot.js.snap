@@ -32,7 +32,7 @@ exports[`EmailInput with value matches snapshot 1`] = `
   className="input-group">
   <input
     checked={false}
-    className="input-group__text-field has-content"
+    className="input-group__text-field has-content is-error-field"
     disabled={false}
     id=""
     onBlur={[Function bound _onBlur]}
